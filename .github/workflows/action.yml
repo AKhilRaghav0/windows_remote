@@ -1,9 +1,9 @@
 name: Windows_RDP
 
 on:  
-  schedule:
+ # schedule:
     # Runs "at minute 55 past every hour"
-    - cron: '55 * * * *'
+   # - cron: '55 * * * *'
   workflow_dispatch:
    inputs:
      auth:
