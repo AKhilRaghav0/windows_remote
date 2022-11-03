@@ -31,6 +31,5 @@ jobs:
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "${{ github.event.inputs.auth }}" -Force)
     - name: Check ngrok Agent for tunnel
-      run: .\ngrok\ngrok.exe tcp 3389 &
-    - name: ngrok is now listening to VNC connections on...
-      run: curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
+      run: .\ngrok\ngrok.exe tcp --region=in 3389 
+
