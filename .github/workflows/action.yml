@@ -17,6 +17,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: ExtraPackages-Installation
+    - run: choco install qbittorrent 64gram
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extraction
